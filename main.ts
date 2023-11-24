@@ -1,5 +1,9 @@
-input.onGesture(Gesture.Shake, function () {
-    basic.showNumber(randint(1, 6))
+let _1 = 0
+let _2 = 0
+input.onButtonPressed(Button.A, function () {
+    _1 = randint(1, 6)
+    _2 = randint(1, 6)
+    basic.showNumber(_1 + _2)
 })
 input.onButtonPressed(Button.AB, function () {
     if (Math.randomBoolean()) {
@@ -8,6 +12,6 @@ input.onButtonPressed(Button.AB, function () {
         basic.showIcon(IconNames.Heart)
     }
 })
-loops.everyInterval(1000, function () {
-    basic.clearScreen()
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(randint(1, 6))
 })
